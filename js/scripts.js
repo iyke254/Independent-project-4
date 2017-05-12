@@ -18,7 +18,7 @@ Player.prototype.rollone = function() {
   this.tempscore = 0;
   alert("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!");
   } else {
-  this.tempscore += this.roll;
+    this.tempscore += this.roll;
   }
 }
 Player.prototype.hold = function () {
@@ -54,8 +54,13 @@ $(document).ready(function() {
     $(".start-menu").hide();
 
     var player1Name = $(".player1Name").val();
-    var player2Name = $(".player2Name").val();
+    $("#player1Name").text(player1Name);
 
+    var player2Name = $(".player2Name").val();
+    $("#player2Name").text(player2Name);
+
+    player1.playerName = player1Name;
+    player2.player2Name = player2Name;
   });
 
   $("button#new-game").click(function(event){
