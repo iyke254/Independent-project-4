@@ -11,12 +11,13 @@ function Player(turn) {
   this.tempscore = 0;
   this.totalscore = 0;
   this.turn = turn;
-  this.playerName;
+  this.playerName= player1Name, player2Name;
 }
 Player.prototype.rollone = function() {
   if (this.roll === 1) {
   this.tempscore = 0;
   alert("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!")
+  // this.changeturn();
   } else {
   this.tempscore += this.roll;
   }
@@ -55,13 +56,7 @@ $(document).ready(function() {
     $(".start-menu").hide();
 
     var player1Name = $(".player1Name").val();
-    $("#player1Name").text(player1Name);
-
     var player2Name = $(".player2Name").val();
-    $("#player2Name").text(player2Name);
-
-    player1.playerName=player1Name;
-    player2.playerName=player2Name;
 
   });
   $("button#new-game").click(function(event){
