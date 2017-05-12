@@ -11,13 +11,12 @@ function Player(turn) {
   this.tempscore = 0;
   this.totalscore = 0;
   this.turn = turn;
-  this.playerName= player1Name, player2Name;
+  this.playerName;
 }
 Player.prototype.rollone = function() {
   if (this.roll === 1) {
   this.tempscore = 0;
-  alert("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!")
-  // this.changeturn();
+  alert("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!");
   } else {
   this.tempscore += this.roll;
   }
@@ -25,7 +24,7 @@ Player.prototype.rollone = function() {
 Player.prototype.hold = function () {
   this.totalscore += this.tempscore;
   this.tempscore = 0;
-  alert(this.playerName + ", your turn is over, pass the mouse!");
+  alert(this.playerName + ", your turn is over, next player turn!");
 }
 
 Player.prototype.winnerCheck = function () {
@@ -48,7 +47,6 @@ var clearValues = function(){
 
 // User Interface
 $(document).ready(function() {
-
   $("button#start").click(function(event){
     player1 = new Player(true);
     player2 =  new Player(false);
@@ -59,6 +57,7 @@ $(document).ready(function() {
     var player2Name = $(".player2Name").val();
 
   });
+
   $("button#new-game").click(function(event){
     $(".player-console").hide();
     clearValues();
