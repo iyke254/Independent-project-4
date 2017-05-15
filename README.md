@@ -13,4 +13,4 @@ Since it a webapp there are no install instructions needed. Just click and play.
 
 Have fun!!!!
 
-####### Copyright ONIcorp
+###### Copyright ONIcorp
