@@ -50,13 +50,13 @@ $(document).ready(function() {
   $("button#start").click(function(event){
     player1 = new Player(true);
     player2 =  new Player(false);
-    $(".player-console").show();
+    $(".player-console").show(2000);
     $(".start-menu").hide();
 
-    var player1Name = $(".player1Name").val();
-    $("#player1Name").text(player1Name);
+    var player1Name = $("input#name1").val();
+    $(".player1Name").text(player1Name);
 
-    var player2Name = $(".player2Name").val();
+    var player2Name = $("input#name2").val();
     $("#player2Name").text(player2Name);
 
     player1.playerName = player1Name;
